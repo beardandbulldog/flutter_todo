@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> {
             child: new TextField(
               controller: _textEditingController,
               decoration: InputDecoration(
-                hintText: 'Please enter a search term',
+                hintText: 'Please enter a task',
               ),
               onSubmitted: _onSubmit,
             )),
