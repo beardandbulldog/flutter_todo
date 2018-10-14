@@ -9,7 +9,7 @@ $ git clone https://github.com/guivazcabral/flutter_todo
 ```
 Make sure you have installed Flutter following [this instructions](https://flutter.io/get-started/install/).
 ```
-$ cd flutterfogos
+$ cd flutter_todo
 $ flutter doctor
 ```
 Fix anything `$ flutter doctor` asks. 
