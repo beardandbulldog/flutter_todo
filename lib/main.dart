@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:todo/models/item.dart';
-import 'package:todo/utils/theme.dart';
+import 'package:todo/theme.dart';
 
 void main() => runApp(MyApp());
 
