@@ -11,10 +11,8 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Awesome Todo',
       home: HomePage(),
-      theme: ThemeData(
-        bottomSheetTheme: BottomSheetThemeData(
-            backgroundColor: Colors.black.withOpacity(0)),
-      )
+      theme:todayTheme(),
+
     );
   }
 }
@@ -52,9 +50,8 @@ class _HomePageState extends State<HomePage> {
 
   onAddItemPressed() {
     _scaffoldKey.currentState.showBottomSheet<Null>((BuildContext context) {
-
-            return Padding(
-              padding: const EdgeInsets.fromLTRB(12.0, 8.0, 12.0, 8.0),
+      return Padding(
+              padding: const EdgeInsets.fromLTRB(12.0, 0, 12.0, 8.0),
               child: Form(
               key: _formKey,
                 child: Column(
@@ -80,16 +77,18 @@ class _HomePageState extends State<HomePage> {
                           controller: _textEditingController,
                           autofocus: true,
                           decoration: new InputDecoration(
-                            hintText: 'What do you want to achieve today?',
+                            hintText: 'What are you going to achieve today?',
+                            hintStyle: Theme.of(context).textTheme.bodyText2,
                             filled: true,
                             fillColor: Colors.white,
+                            suffixIcon: Icon(Icons.add),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(50.0)),
                               borderSide: BorderSide(color: Colors.white),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                              borderSide: BorderSide(color: Colors.white),
+                              borderSide: BorderSide(color: Color(0x4DA16A62),),
                             ),
                             errorBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(50.0)),
@@ -99,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                               borderRadius: BorderRadius.all(Radius.circular(50.0)),
                               borderSide: BorderSide(color: Colors.white),
                             ),
-                            contentPadding: EdgeInsets.symmetric(vertical:10.0, horizontal:20,),
+                            contentPadding: EdgeInsets.only(top:10.0, bottom: 10.0, left:20, right: 5,),
                           ),
                           onFieldSubmitted: mySubmit,
                           validator: (value) {
@@ -153,11 +152,15 @@ class _HomePageState extends State<HomePage> {
       key: _scaffoldKey,
      backgroundColor: Color(0xFFFBF1EF),
       appBar: AppBar(
-        title: Text(
-            'Wednesday',
-          style: Theme.of(context).textTheme.headline3,)
-      ),
-      body: Container(
+        elevation: 0,
+        title: Center(
+          child: Text(
+              'Wednesday',
+              style: Theme.of(context).textTheme.headline3,
+              ),
+            ),
+          ),
+      body: SafeArea(
         child: ListView.builder(
           itemCount: items.length,
           itemBuilder: (context, index) {
@@ -175,20 +178,19 @@ class _HomePageState extends State<HomePage> {
               ),
             );
           },
+   ),
         ),
-
-
-
-      ),
-     floatingActionButton: FloatingActionButton(
+     floatingActionButton: Padding(
+       padding: EdgeInsets.only(bottom: 100.0),
+     child: FloatingActionButton(
        onPressed: () {
          onAddItemPressed();
        },
        child: Icon(Icons.add,),
        mini: true,
-     ),
+     ),),
 
     );
+
   }
 }
-

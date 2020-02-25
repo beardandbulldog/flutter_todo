@@ -44,6 +44,8 @@ flutter:
       fonts:
         - asset: fonts/Quicksand-semibold-600.ttf
           weight: 600
+        - asset: fonts/Quicksand-regular-400.ttf
+          weight: 400
     - family: 'Recoleta'
       fonts:
         - asset: fonts/Recoleta-Medium-500.ttf

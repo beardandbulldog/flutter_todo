@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 ThemeData todayTheme(){
+
   TextTheme _todayTextTheme(TextTheme base){
     return base.copyWith(
         headline1: base.headline1.copyWith(
@@ -12,7 +13,7 @@ ThemeData todayTheme(){
         headline3: base.headline3.copyWith(
           fontFamily: 'Recoleta',
           fontWeight: FontWeight.w600,
-          color: Color(0xFFC19E40),),
+            color: Color(0xFF25282B),),
         headline4: base.headline4.copyWith(
           fontFamily: 'Recoleta',
           fontWeight: FontWeight.w600,
@@ -25,6 +26,11 @@ ThemeData todayTheme(){
           fontFamily: 'Recoleta',
           fontWeight: FontWeight.w500,
           color: Colors.red,),
+
+        bodyText2: base.bodyText2.copyWith(
+          fontFamily: 'Quicksand',
+          fontWeight: FontWeight.w400,
+          color: Color(0xFF6A6A6A),),
 
         overline: base.overline.copyWith(
           fontFamily: 'Quicksand',
@@ -41,8 +47,10 @@ ThemeData todayTheme(){
   final ThemeData base=ThemeData.light();
   return base.copyWith(
     textTheme: _todayTextTheme(base.textTheme),
-    primaryColor: Color(0xFFC19E40),
-
+    primaryColor: Color(0xFFFBF1EF),
+      bottomSheetTheme:
+      BottomSheetThemeData(
+        backgroundColor: Color(0xFFFBF1EF),
+      )
   );
 }
-
